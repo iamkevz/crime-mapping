@@ -1,1 +1,1 @@
-web: gunicorn crime-mapping.wsgi:application
+web: gunicorn DATAMINING.wsgi:application
