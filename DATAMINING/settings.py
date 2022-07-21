@@ -9,12 +9,15 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import os.path
 
+import dj_database_url
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_ROOT = BASE_DIR/'WEBAPP/templates'
+STATIC_ROOT = os.path.join(BASE_DIR,'WEBAPP/templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,11 +27,9 @@ STATIC_ROOT = BASE_DIR/'WEBAPP/templates'
 SECRET_KEY = 'django-insecure-g#bwhnv!%=3a3p_)$jlj+g13+6d6s&n$b7(7%_s@+o!su#4dj-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [
-    'crime-mapping-finalproject.herokuapp.com'
-]
+ALLOWED_HOSTS = ['crime-mapez.herokuapp.com']
 
 
 # Application definition
@@ -126,3 +127,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
