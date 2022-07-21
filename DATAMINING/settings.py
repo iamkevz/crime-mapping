@@ -27,9 +27,9 @@ STATIC_ROOT = os.path.join(BASE_DIR,'WEBAPP/templates')
 SECRET_KEY = 'django-insecure-g#bwhnv!%=3a3p_)$jlj+g13+6d6s&n$b7(7%_s@+o!su#4dj-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['crime-mapez.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','crime-mapez.herokuapp.com']
 
 
 # Application definition
@@ -127,4 +127,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-django_heroku.settings(locals())
+
